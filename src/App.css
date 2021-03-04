@@ -20,6 +20,16 @@ body{
   }
 }
 
+button {
+  padding: 5px;
+  border-radius: 5px;
+  border-color: rgb(32,32,32);
+  background-color: grey;
+  color: whitesmoke;
+  margin: 20px 0px 0px 10px;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

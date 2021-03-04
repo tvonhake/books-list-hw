@@ -2,21 +2,21 @@ import React from 'react'
 import Book from './Book'
 
 const Books = (props) => {
-  const {books} = props
+  const {books, deleteBook, loading} = props
 
   const renderBooks = () => {
-    if (books.length === 0){
+    if ((books.length === 0) && (loading == false)){
       return (<p>No books</p>)
     }
 
     return books.map( book => {
-      return <Book key={book.id} {...book}/>
+      return <Book deleteBook={deleteBook} key={book.isbn} {...book}/>
     })
   }
 
   return(
     <div>
-      <h1>Books list here</h1>
+      <h1>Books list:</h1>
       {renderBooks()}
     </div>
   )
