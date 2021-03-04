@@ -42,7 +42,6 @@ const BookForm = (props) => {
         </div>
         <div className="input-form-buttons">
           <button type='submit'>Create Book</button>
-          <button type='reset'>Reset Form</button>
         </div>
       </form>
     </div>
