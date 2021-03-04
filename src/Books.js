@@ -17,7 +17,10 @@ const Books = (props) => {
   return(
     <div>
       <h1>Books list:</h1>
-      {renderBooks()}
+      <div className="books-container">
+        {renderBooks()}
+      </div>
+      
     </div>
   )
 }

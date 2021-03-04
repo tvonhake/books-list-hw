@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 const BookForm = (props) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
+  const [genre, setGenre] = useState('')
 
   const handleSubmit = (event) => {
     const {addBook} = props
@@ -14,27 +15,34 @@ const BookForm = (props) => {
     console.log(author)
 
     //add to books array in app.js
-    addBook({title: title, author: author})
+    addBook({title: title, author: author, genre: genre})
     setTitle('')
     setAuthor('')
   }
   return (
-    <div>
+    <div className="input-form">
       <h2>form here</h2>
       <form onSubmit={handleSubmit}>
-        <p>Title</p>
-        <input 
-          value={title}
-          onChange={(event)=>{setTitle(event.target.value)}}
-        />
-        <p>Author</p>
-        <input 
-          value={author}
-          onChange={(event)=>{setAuthor(event.target.value)}}
-        />
-        <div>
-        <button type='submit'>Create Book</button>
-        <button type='reset'>Reset Form</button>
+        <div className="input-form-fields">
+          <p>Title</p>
+          <input 
+            value={title}
+            onChange={(event)=>{setTitle(event.target.value)}}
+          />
+          <p>Author</p>
+          <input 
+            value={author}
+            onChange={(event)=>{setAuthor(event.target.value)}}
+          />
+          <p>Genre</p>
+          <input 
+            value={genre}
+            onChange={(event)=>{setGenre(event.target.value)}}
+          />
+        </div>
+        <div className="input-form-buttons">
+          <button type='submit'>Create Book</button>
+          <button type='reset'>Reset Form</button>
         </div>
       </form>
     </div>
